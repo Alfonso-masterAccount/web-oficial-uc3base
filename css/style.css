@@ -1,13 +1,19 @@
 /* --- ESTILOS GENERALES (RESET) --- */
 body {
-    /* ...mantén el resto... */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #e0e0e0;
     margin: 0;
-
-    /* EL CAMBIO: */
-    background: radial-gradient(circle at center, #1a1d29 0%, #000000 80%);
-    min-height: 100vh;
+    padding: 0;
+    line-height: 1.6;
+    
+    /* --- FONDO REACTOR CENTRAL (Opción C) --- */
+    /* Crea un brillo sutil en el centro que se oscurece hacia los bordes */
+    background: radial-gradient(circle at center, #2a2d3d 0%, #000000 90%);
+    background-attachment: fixed; /* El fondo se queda quieto al hacer scroll */
+    min-height: 100vh; /* Asegura que cubra toda la pantalla */
+    
+    /* ANIMACIÓN DE ENTRADA (Que ya tenías) */
+    animation: entradaSuave 0.8s ease-out; 
 }
 
 /* --- ANIMACIÓN DE ENTRADA --- */
@@ -59,25 +65,38 @@ nav {
     color: #c21c24; /* Rojo al pasar el ratón */
 }
 
-/* --- CABECERAS (HERO) --- */
+/* --- CABECERAS--- */
+
 header {
     text-align: center;
-    padding: 80px 20px;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://source.unsplash.com/1600x900/?space,satellite');
+    padding: 100px 20px;
+    
+    /* CAMBIO CLAVE: Usamos '../img/planeta.jpg' */
+    /* Los dos puntos (..) significan "sal de la carpeta css y busca en img" */
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('../img/planeta.jpg');
+    
     background-size: cover;
     background-position: center;
+    border-bottom: 3px solid #c21c24;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
 }
 
+/* EL TÍTULO GIGANTE (H1) */
 header h1 {
-    font-size: 3.5rem;
+    font-size: 3.5rem;        /* Tamaño grande */
     margin: 0;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    text-transform: uppercase; /* Todo mayúsculas */
+    letter-spacing: 2px;       /* Separación entre letras (queda muy "espacial") */
+    color: white;              /* Blanco puro */
+    text-shadow: 0 4px 10px rgba(0,0,0,0.8); /* Sombra negra para que se lea bien sobre la Tierra */
 }
 
+/* EL SUBTÍTULO (P) */
 header p {
     font-size: 1.5rem;
-    color: #aaa;
+    color: #f0f0f0;            /* Blanco un pelín grisáceo */
+    margin-top: 15px;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.8);
 }
 
 /* --- TARJETAS (GRID) --- */
@@ -304,4 +323,26 @@ form input:focus, form textarea:focus {
 
     .grid-equipo { flex-direction: column; align-items: center; }
     .tarjeta-miembro { width: 80%; margin-bottom: 20px; }
+}
+
+/* --- PORTADA A PANTALLA COMPLETA (HERO) --- */
+.hero-inicio {
+    /* Ocupar toda la altura de la pantalla menos el menú */
+    min-height: 90vh; 
+    
+    /* Centrar todo el contenido perfectamente en el medio */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    /* Ajustes visuales */
+    padding: 0 20px; /* Quitamos el padding gigante de arriba/abajo */
+    border-bottom: none; /* En la portada queda mejor sin la línea roja de corte */
+}
+
+/* Hacemos el título de la portada AÚN más grande */
+.hero-inicio h1 {
+    font-size: 4.5rem; /* Gigante */
+    margin-bottom: 20px;
 }
