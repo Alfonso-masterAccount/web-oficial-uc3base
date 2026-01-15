@@ -126,7 +126,7 @@ section {
 
 /* --- FOOTER (PIE DE PÁGINA) --- */
 footer {
-    background-color: #05060a; /* Más oscuro que el fondo */
+    background-color: #05060a;
     text-align: center;
     padding: 40px 20px;
     margin-top: 50px;
@@ -134,44 +134,30 @@ footer {
     font-size: 0.9rem;
     color: #777;
 }
-/* --- VERSIÓN MÓVIL (RESPONSIVE) --- */
-@media (max-width: 600px) {
-    
-    /* 1. El menú se pone en vertical */
-    nav {
-        flex-direction: column;
-        padding: 10px;
-    }
 
-    .menu {
-        flex-direction: column;
-        gap: 10px;
-        margin-top: 15px;
-        text-align: center;
-    }
-
-    /* 2. El título gigante se reduce un poco */
-    header h1 {
-        font-size: 2.5rem;
-    }
-
-    /* 3. Las tarjetas ocupan todo el ancho y se apilan */
-    .grid-equipo {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .tarjeta-miembro {
-        width: 80%; /* En el móvil ocupan casi toda la pantalla */
-        margin-bottom: 20px;
-    }
-}
-/* --- FOTOS DE PROYECTOS --- */
+/* --- FOTOS DE PROYECTOS (ESTO TIENE QUE ESTAR FUERA DEL MEDIA) --- */
 .foto-proyecto {
-    width: 100%;       /* Que ocupe todo el ancho de la tarjeta */
-    height: 150px;     /* Altura fija para que todas sean iguales */
-    object-fit: cover; /* Recorta la foto para que no se deforme/aplaste */
-    border-radius: 5px; /* Bordes un poco redondeados */
+    width: 100%;        /* Ocupa todo el ancho de la tarjeta */
+    height: 250px;      /* Altura FIJA: Todas medirán exactamente lo mismo de alto */
+    object-fit: cover;  /* MAGIA: Recorta la foto para que llene el hueco sin deformarse */
+    border-radius: 5px; 
     margin-bottom: 15px;
-    border: 1px solid #444;
+    border: 1px solid #333;
+}
+
+/* --- VERSIÓN MÓVIL (RESPONSIVE) --- */
+@media (max-width: 768px) {
+    /* Aquí dentro SOLO ponemos los cambios para pantallas pequeñas */
+    
+    nav { flex-direction: column; padding: 10px; }
+    .menu { flex-direction: column; gap: 10px; margin-top: 15px; text-align: center; }
+    header h1 { font-size: 2.5rem; }
+    
+    /* En móvil permitimos que la foto sea un poco más bajita si hace falta */
+    .foto-proyecto {
+        height: 200px;
+    }
+
+    .grid-equipo { flex-direction: column; align-items: center; }
+    .tarjeta-miembro { width: 80%; margin-bottom: 20px; }
 }
