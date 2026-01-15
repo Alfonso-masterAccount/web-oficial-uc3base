@@ -179,39 +179,98 @@ footer {
     border: 1px solid #333;
 }
 /* --- FORMULARIO DE CONTACTO --- */
+/* --- FORMULARIO DISEÑO "DARK FUTURE" --- */
 .contenedor-formulario {
-    max-width: 600px;
-    margin: 0 auto; /* Centrado */
-    background: #1a1d29;
-    padding: 40px;
-    border-radius: 10px;
-    border: 1px solid #333;
-    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    max-width: 700px;
+    margin: 0 auto;
+    background: transparent; /* Fondo transparente para integrarse mejor */
+    padding: 20px;
 }
 
 form label {
     display: block;
     margin-bottom: 8px;
-    font-weight: bold;
-    color: #c21c24; /* Rojo UC3M */
+    font-weight: 700; /* Letra gordita */
+    color: white;
+    font-size: 0.95rem;
 }
 
+.asterisco {
+    color: #c21c24; /* El asterisco rojo */
+}
+
+/* Campos de texto oscuros */
 form input, form textarea {
     width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
-    background-color: #0b0d17; /* Fondo oscuro */
-    border: 1px solid #444;
+    padding: 15px;
+    margin-bottom: 25px;
+    background-color: #05060a; /* Casi negro, muy oscuro */
+    border: 1px solid #333;
     color: white;
-    border-radius: 5px;
-    font-family: inherit; /* Usa la misma letra que la web */
-    box-sizing: border-box; /* Evita que el padding rompa el ancho */
+    border-radius: 4px; /* Bordes menos redondos, más técnicos */
+    font-family: inherit;
+    box-sizing: border-box;
 }
 
 form input:focus, form textarea:focus {
     outline: none;
-    border-color: #c21c24; /* Se ilumina rojo al escribir */
-    background-color: #151825;
+    border-color: #c21c24;
+    background-color: #000;
+}
+
+/* Fila doble para Nombre y Apellidos */
+.fila-doble {
+    display: flex;
+    gap: 15px; /* Espacio entre las dos cajas */
+}
+
+/* Checkboxes (Casillas) */
+.grupo-checkbox {
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.opcion {
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.opcion input {
+    width: auto; /* Que el cuadradito no ocupe todo el ancho */
+    margin: 0;
+    accent-color: #c21c24; /* Pinta el tick de rojo */
+}
+
+/* Botón gigante rojo */
+.boton-full {
+    display: block;
+    width: 100%;
+    background-color: #a61017; /* Rojo oscuro intenso */
+    color: white;
+    padding: 15px;
+    border: none;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.boton-full:hover {
+    background-color: #c21c24; /* Rojo más vivo al pasar el ratón */
+}
+
+/* Ajuste móvil para que no se rompa la doble columna */
+@media (max-width: 600px) {
+    .fila-doble {
+        flex-direction: column; /* En móvil, uno debajo de otro */
+        gap: 0;
+    }
 }
 
 /* --- ICONOS REDES SOCIALES --- */

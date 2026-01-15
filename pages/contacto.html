@@ -26,23 +26,37 @@
     </nav>
 
     <header>
-        <h1>Únete a la Misión</h1>
-        <p>¿Quieres lanzar cohetes o programar satélites? Escríbenos.</p>
+        <h1 style="text-transform: uppercase; font-weight: 900; letter-spacing: 1px;">¿LISTO PARA CONSTRUIR EL FUTURO?</h1>
+        <p style="font-size: 1.1rem; color: #ccc;">No importa si eres de primero o de máster. Si te gusta el espacio, tienes un sitio en la mesa.</p>
     </header>
 
     <section>
         <div class="contenedor-formulario">
-            <form action="https://formspree.io/f/mbejjrzr" method="POST">
-                <label for="nombre">Nombre del Cadete:</label>
-                <input type="text" id="nombre" name="nombre" placeholder="Ej: Neil Armstrong" required>
+            <form action="https://formspree.io/f/TU_CODIGO_AQUI" method="POST">
+                
+                <label>Nombre y Apellidos <span class="asterisco">*</span></label>
+                <div class="fila-doble">
+                    <input type="text" name="nombre" placeholder="Nombre" required>
+                    <input type="text" name="apellidos" placeholder="Apellidos" required>
+                </div>
 
-                <label for="email">Correo de la Universidad:</label>
-                <input type="email" id="email" name="email" placeholder="100XXXXXX@alumnos.uc3m.es" required>
+                <label>Correo electrónico <span class="asterisco">*</span></label>
+                <input type="email" name="email" placeholder="tucorreo@alumnos.uc3m.es" required>
 
-                <label for="mensaje">Tu Mensaje:</label>
-                <textarea id="mensaje" name="mensaje" rows="5" placeholder="Cuéntanos qué te gustaría hacer en la asociación..." required></textarea>
+                <label>¿Qué estudias?</label>
+                <input type="text" name="estudios" placeholder="Ej: Ingeniería Aeroespacial, Teleco...">
 
-                <button type="submit" class="boton-espacial">ENVIAR TRANSMISIÓN 📡</button>
+                <label>¿Qué área te interesa?</label>
+                <div class="grupo-checkbox">
+                    <label class="opcion"><input type="checkbox" name="interes" value="Estacion"> Estación Terrena</label>
+                    <label class="opcion"><input type="checkbox" name="interes" value="Modulacion"> Modulación / Radio</label>
+                    <label class="opcion"><input type="checkbox" name="interes" value="Gestion"> Gestión y RRSS</label>
+                </div>
+
+                <label>Cuéntanos por qué quieres unirte</label>
+                <textarea name="mensaje" rows="5"></textarea>
+
+                <button type="submit" class="boton-full">ENVIAR</button>
             </form>
         </div>
     </section>
