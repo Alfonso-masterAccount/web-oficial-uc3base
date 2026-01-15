@@ -97,12 +97,10 @@ section {
 }
 
 /* --- NUEVO: Alineación de Títulos --- */
+/* --- Versión simplificada para los títulos --- */
 .tarjeta-miembro h3 {
-    min-height: 3.5rem;       /* Reserva espacio para 2 líneas de texto siempre */
-    display: flex;            /* Para poder centrar el texto verticalmente */
-    align-items: center;      /* Centra el texto en el hueco reservado */
-    justify-content: center;
-    margin: 10px 0;           /* Un poco de aire arriba y abajo */
+    margin: 15px 0 10px 0; /* Un poco de aire arriba y abajo */
+    line-height: 1.2;      /* Altura de línea más compacta */
 }
 
 /* --- AJUSTE: Botón al fondo --- */
