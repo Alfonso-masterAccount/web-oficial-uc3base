@@ -104,3 +104,33 @@ section {
     color: #c21c24;
     font-weight: bold;
 }
+
+/* --- BOTONES --- */
+.boton-espacial {
+    display: inline-block;
+    background-color: #c21c24; /* Rojo UC3M */
+    color: white;
+    padding: 12px 35px;
+    border-radius: 50px; /* Bordes redondos */
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.boton-espacial:hover {
+    background-color: #e6202a;
+    transform: scale(1.05); /* Crece un poquito al pasar el ratón */
+    color: white;
+}
+
+/* --- FOOTER (PIE DE PÁGINA) --- */
+footer {
+    background-color: #05060a; /* Más oscuro que el fondo */
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 50px;
+    border-top: 1px solid #333;
+    font-size: 0.9rem;
+    color: #777;
+}
