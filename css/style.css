@@ -30,14 +30,23 @@ body {
 
 /* --- BARRA DE NAVEGACIÓN --- */
 nav {
-    background-color: rgba(0, 0, 0, 0.9); /* Semitransparente */
+    /* El degradado "Reddish" que querías: De casi negro a rojo sangre oscuro */
+    background: linear-gradient(90deg, #1a0505 0%, #590d12 100%);
+    
     padding: 15px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid #c21c24; /* Rojo UC3M */
+    
+    /* ADIÓS A LA LÍNEA ROJA FEA */
+    border-bottom: none; 
+    
+    /* Una sombra suave para que flote sobre la web */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    
     position: sticky;
     top: 0;
+    z-index: 1000; /* Asegura que la barra siempre esté encima de la foto gigante */
 }
 
 .logo {
@@ -54,15 +63,17 @@ nav {
 }
 
 .menu a {
-    color: white;
+    color: rgba(255, 255, 255, 0.7); /* Blanco un poco transparente (elegante) */
     text-decoration: none;
     font-weight: 600;
     font-size: 1.1rem;
-    transition: color 0.3s;
+    transition: all 0.3s ease;
 }
 
+/* Al pasar el ratón, en vez de rojo, se ilumina en BLANCO PURO */
 .menu a:hover, .menu a.activo {
-    color: #c21c24; /* Rojo al pasar el ratón */
+    color: #ffffff; 
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.6); /* Efecto neón suave */
 }
 
 /* --- CABECERAS--- */
