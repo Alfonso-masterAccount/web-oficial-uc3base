@@ -166,3 +166,12 @@ footer {
         margin-bottom: 20px;
     }
 }
+/* --- FOTOS DE PROYECTOS --- */
+.foto-proyecto {
+    width: 100%;       /* Que ocupe todo el ancho de la tarjeta */
+    height: 150px;     /* Altura fija para que todas sean iguales */
+    object-fit: cover; /* Recorta la foto para que no se deforme/aplaste */
+    border-radius: 5px; /* Bordes un poco redondeados */
+    margin-bottom: 15px;
+    border: 1px solid #444;
+}
