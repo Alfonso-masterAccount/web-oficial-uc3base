@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | UC3-BASE</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="../img/LOGO_UC3M-BASE.png" type="image/png">
+</head>
+<body>
+
+    <nav>
+        <img src="../img/LOGO_UC3M-BASE.png" alt="Logo UC3 Base" class="logo">
+        <ul class="menu">
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="proyectos.html">Proyectos</a></li>
+            <li><a href="equipo.html">Equipo</a></li>
+            <li><a href="contacto.html" class="activo">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Únete a la Misión</h1>
+        <p>¿Quieres lanzar cohetes o programar satélites? Escríbenos.</p>
+    </header>
+
+    <section>
+        <div class="contenedor-formulario">
+            <form action="https://formspree.io/f/mbejjrzr" method="POST">
+                <label for="nombre">Nombre del Cadete:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ej: Neil Armstrong" required>
+
+                <label for="email">Correo de la Universidad:</label>
+                <input type="email" id="email" name="email" placeholder="100XXXXXX@alumnos.uc3m.es" required>
+
+                <label for="mensaje">Tu Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="5" placeholder="Cuéntanos qué te gustaría hacer en la asociación..." required></textarea>
+
+                <button type="submit" class="boton-espacial">ENVIAR TRANSMISIÓN 📡</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 UC3-BASE - Universidad Carlos III de Madrid</p>
+        <p>Desarrollado con código puro 🚀</p>
+    </footer>
+
+</body>
+</html>

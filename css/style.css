@@ -163,7 +163,41 @@ footer {
     margin-bottom: 15px;
     border: 1px solid #333;
 }
+/* --- FORMULARIO DE CONTACTO --- */
+.contenedor-formulario {
+    max-width: 600px;
+    margin: 0 auto; /* Centrado */
+    background: #1a1d29;
+    padding: 40px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
 
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #c21c24; /* Rojo UC3M */
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    background-color: #0b0d17; /* Fondo oscuro */
+    border: 1px solid #444;
+    color: white;
+    border-radius: 5px;
+    font-family: inherit; /* Usa la misma letra que la web */
+    box-sizing: border-box; /* Evita que el padding rompa el ancho */
+}
+
+form input:focus, form textarea:focus {
+    outline: none;
+    border-color: #c21c24; /* Se ilumina rojo al escribir */
+    background-color: #151825;
+}
 /* --- VERSIÓN MÓVIL (RESPONSIVE) --- */
 @media (max-width: 768px) {
     /* Aquí dentro SOLO ponemos los cambios para pantallas pequeñas */
