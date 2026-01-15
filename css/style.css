@@ -6,9 +6,8 @@ body {
     margin: 0;
 
     /* EL CAMBIO: */
-    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop');
-    background-size: cover;
-    background-attachment: fixed; /* Efecto Parallax: la imagen no se mueve al bajar */
+    background: radial-gradient(circle at center, #1a1d29 0%, #000000 80%);
+    min-height: 100vh;
 }
 
 /* --- ANIMACIÓN DE ENTRADA --- */
