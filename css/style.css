@@ -80,7 +80,7 @@ header {
         rgba(0,0,0,0.6) 60%,  /* MEDIO: Se oscurece un poco para leer el texto. */
         rgba(0,0,0,1) 100%    /* ABAJO: NEGRO PURO SÓLIDO (1). Se funde con la web. */
         ), 
-        url('../img/tierra.jpg'); /* Tu foto nueva */
+        url('../img/planeta.jpg'); /* Tu foto nueva */
     
     background-size: cover;
     background-position: center;
