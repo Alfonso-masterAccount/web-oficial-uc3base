@@ -71,9 +71,9 @@ header {
     text-align: center;
     padding: 100px 20px;
     
-    /* CAMBIO CLAVE: Usamos '../img/planeta.jpg' */
+    /* CAMBIO CLAVE: Usamos '../img/planeta.webp' */
     /* Los dos puntos (..) significan "sal de la carpeta css y busca en img" */
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('../img/planeta.jpg');
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('../img/planeta.webp');
     
     background-size: cover;
     background-position: center;
