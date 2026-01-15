@@ -73,7 +73,7 @@ header {
     
     /* CAMBIO CLAVE: Usamos '../img/planeta.jpg' */
     /* Los dos puntos (..) significan "sal de la carpeta css y busca en img" */
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('../img/planeta.jpg');
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('../img/planeta.jpeg');
     
     background-size: cover;
     background-position: center;
