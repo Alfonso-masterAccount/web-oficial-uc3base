@@ -1,13 +1,14 @@
 /* --- ESTILOS GENERALES (RESET) --- */
 body {
-    /* ...mantén el font-family y color... */
+    /* ...mantén el resto... */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #e0e0e0;
     margin: 0;
-    
-    /* EL CAMBIO ESTÁ AQUÍ: */
-    background: linear-gradient(135deg, #05060a 0%, #3a0507 100%); /* Negro a Rojo Oscuro */
-    min-height: 100vh; /* Asegura que cubra toda la pantalla */
+
+    /* EL CAMBIO: */
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop');
+    background-size: cover;
+    background-attachment: fixed; /* Efecto Parallax: la imagen no se mueve al bajar */
 }
 
 /* --- ANIMACIÓN DE ENTRADA --- */
