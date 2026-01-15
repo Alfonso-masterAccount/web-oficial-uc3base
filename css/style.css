@@ -67,18 +67,27 @@ nav {
 
 /* --- CABECERAS--- */
 
+/* --- CABECERAS FUSIONADAS --- */
 header {
     text-align: center;
-    padding: 100px 20px;
+    /* Damos un poco más de altura para que la transición sea suave */
+    padding: 140px 20px; 
     
-    /* CAMBIO CLAVE: Usamos '../img/planeta.jpg' */
-    /* Los dos puntos (..) significan "sal de la carpeta css y busca en img" */
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('../img/planeta.jpg');
+    /* --- EL TRUCO DE LA FUSIÓN --- */
+    background: linear-gradient(
+        to bottom,            /* El degradado va hacia abajo */
+        rgba(0,0,0,0.2) 0%,   /* ARRIBA: Solo un 20% de negro. La foto se ve MUY CLARA. */
+        rgba(0,0,0,0.6) 60%,  /* MEDIO: Se oscurece un poco para leer el texto. */
+        rgba(0,0,0,1) 100%    /* ABAJO: NEGRO PURO SÓLIDO (1). Se funde con la web. */
+        ), 
+        url('../img/tierra.jpg'); /* Tu foto nueva */
     
     background-size: cover;
     background-position: center;
-    border-bottom: 3px solid #c21c24;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    
+    /* --- ELIMINANDO EL "ESCALÓN" --- */
+    border-bottom: none; /* Quitamos la línea roja que cortaba */
+    box-shadow: none;    /* Quitamos la sombra que la levantaba */
 }
 
 /* EL TÍTULO GIGANTE (H1) */
