@@ -135,7 +135,7 @@ footer {
     color: #777;
 }
 /* --- VERSIÓN MÓVIL (RESPONSIVE) --- */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     
     /* 1. El menú se pone en vertical */
     nav {
