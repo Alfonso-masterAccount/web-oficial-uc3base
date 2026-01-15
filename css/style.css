@@ -88,6 +88,27 @@ section {
     width: 250px;
     border: 1px solid #333;
     transition: transform 0.3s;
+    
+    /* --- NUEVO: Esto activa la magia de la alineación --- */
+    display: flex;            /* Convierte la tarjeta en una caja flexible */
+    flex-direction: column;   /* Ordena los elementos en columna (vertical) */
+    justify-content: space-between; /* Distribuye el espacio */
+    height: 100%;             /* Asegura que use toda la altura disponible */
+}
+
+/* --- NUEVO: Alineación de Títulos --- */
+.tarjeta-miembro h3 {
+    min-height: 3.5rem;       /* Reserva espacio para 2 líneas de texto siempre */
+    display: flex;            /* Para poder centrar el texto verticalmente */
+    align-items: center;      /* Centra el texto en el hueco reservado */
+    justify-content: center;
+    margin: 10px 0;           /* Un poco de aire arriba y abajo */
+}
+
+/* --- AJUSTE: Botón al fondo --- */
+.tarjeta-miembro .boton-espacial {
+    margin-top: auto;         /* "Muelle": Empuja el botón al final de la tarjeta */
+    align-self: center;       /* Asegura que el botón esté centrado horizontalmente */
 }
 
 .tarjeta-miembro:hover {
