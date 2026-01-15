@@ -1,14 +1,13 @@
 /* --- ESTILOS GENERALES (RESET) --- */
 body {
+    /* ...mantén el font-family y color... */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #0b0d17;
     color: #e0e0e0;
     margin: 0;
-    padding: 0;
-    line-height: 1.6;
     
-    /* ESTA ES LA LÍNEA NUEVA MAGICA: */
-    animation: entradaSuave 0.8s ease-out; 
+    /* EL CAMBIO ESTÁ AQUÍ: */
+    background: linear-gradient(135deg, #05060a 0%, #3a0507 100%); /* Negro a Rojo Oscuro */
+    min-height: 100vh; /* Asegura que cubra toda la pantalla */
 }
 
 /* --- ANIMACIÓN DE ENTRADA --- */
