@@ -198,6 +198,24 @@ form input:focus, form textarea:focus {
     border-color: #c21c24; /* Se ilumina rojo al escribir */
     background-color: #151825;
 }
+
+/* --- ICONOS REDES SOCIALES --- */
+.redes-sociales {
+    margin-bottom: 20px;
+}
+
+.icono-social {
+    color: white;           /* Icono blanco por defecto */
+    font-size: 1.8rem;      /* Tamaño grande */
+    margin: 0 15px;         /* Espacio entre ellos */
+    transition: color 0.3s, transform 0.3s;
+}
+
+.icono-social:hover {
+    color: #c21c24;         /* Rojo UC3M al pasar el ratón */
+    transform: translateY(-5px); /* Saltito hacia arriba */
+}
+
 /* --- VERSIÓN MÓVIL (RESPONSIVE) --- */
 @media (max-width: 768px) {
     /* Aquí dentro SOLO ponemos los cambios para pantallas pequeñas */
