@@ -1,19 +1,22 @@
 /* --- ESTILOS GENERALES (RESET) --- */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Fuente principal para leer cómodo */
+    font-family: 'Montserrat', sans-serif; 
     color: #e0e0e0;
     margin: 0;
     padding: 0;
     line-height: 1.6;
     
-    /* --- FONDO REACTOR CENTRAL (Opción C) --- */
-    /* Crea un brillo sutil en el centro que se oscurece hacia los bordes */
     background: radial-gradient(circle at center, #2a2d3d 0%, #000000 90%);
-    background-attachment: fixed; /* El fondo se queda quieto al hacer scroll */
-    min-height: 100vh; /* Asegura que cubra toda la pantalla */
-    
-    /* ANIMACIÓN DE ENTRADA (Que ya tenías) */
+    background-attachment: fixed;
+    min-height: 100vh;
     animation: entradaSuave 0.8s ease-out; 
+}
+
+/* APLICAR LA FUENTE ESPACIAL A TÍTULOS Y LOGO */
+h1, h2, h3, .nombre-web, .boton-espacial, .boton-full {
+    font-family: 'Orbitron', sans-serif; /* ¡Toque futurista! */
+    letter-spacing: 1px; /* Separamos las letras un poco */
 }
 
 /* --- ANIMACIÓN DE ENTRADA --- */
@@ -29,25 +32,35 @@ body {
 }
 
 /* --- BARRA DE NAVEGACIÓN (Estilo Cristal Rojo) --- */
+/* --- BARRA DE NAVEGACIÓN (Centrada) --- */
 nav {
-    /* Color rojo oscuro semi-transparente */
-    background: rgba(80, 10, 15, 0.9); 
-    
-    /* Efecto de desenfoque del fondo (Glassmorphism) */
+    background: rgba(80, 10, 15, 0.95); 
     backdrop-filter: blur(10px); 
-    -webkit-backdrop-filter: blur(10px); /* Para Safari */
-
+    -webkit-backdrop-filter: blur(10px);
+    
     padding: 10px 40px;
-    display: flex;
-    justify-content: space-between;
+    
+    /* TRUCO PARA CENTRAR: Usamos Grid de 3 columnas */
+    display: grid;
+    /* Columna 1 (Logo): Automática | Columna 2 (Menú): Centrada | Columna 3 (Vacia): Igual que la 1 */
+    grid-template-columns: 1fr auto 1fr; 
     align-items: center;
     
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-    
     position: sticky;
     top: 0;
     z-index: 1000;
+}
+
+/* Aseguramos que el menú esté centrado en su columna */
+.menu {
+    display: flex;
+    gap: 30px;
+    justify-content: center; /* Centrar enlaces */
+    padding: 0;
+    margin: 0;
+    list-style: none;
 }
 
 /* --- LOGO Y TEXTO DE MARCA --- */
