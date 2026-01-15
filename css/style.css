@@ -28,32 +28,56 @@ body {
     }
 }
 
-/* --- BARRA DE NAVEGACIÓN --- */
+/* --- BARRA DE NAVEGACIÓN (Estilo Cristal Rojo) --- */
 nav {
-    /* El degradado "Reddish" que querías: De casi negro a rojo sangre oscuro */
-    background: linear-gradient(90deg, #1a0505 0%, #590d12 100%);
+    /* Color rojo oscuro semi-transparente */
+    background: rgba(80, 10, 15, 0.9); 
     
-    padding: 15px 40px;
+    /* Efecto de desenfoque del fondo (Glassmorphism) */
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); /* Para Safari */
+
+    padding: 10px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     
-    /* ADIÓS A LA LÍNEA ROJA FEA */
-    border-bottom: none; 
-    
-    /* Una sombra suave para que flote sobre la web */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
     
     position: sticky;
     top: 0;
-    z-index: 1000; /* Asegura que la barra siempre esté encima de la foto gigante */
+    z-index: 1000;
+}
+
+/* --- LOGO Y TEXTO DE MARCA --- */
+.marca-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espacio entre el dibujo y el texto */
+    text-decoration: none;
 }
 
 .logo {
-    width: 60px;
+    width: 50px; /* Tamaño del logo */
     height: auto;
+    transition: transform 0.3s;
 }
 
+.nombre-web {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 800; /* Letra muy gruesa */
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.marca-logo:hover .logo {
+    transform: rotate(10deg); /* Pequeña animación al pasar el ratón */
+}
+
+/* --- MENÚ DE ENLACES --- */
 .menu {
     list-style: none;
     display: flex;
@@ -63,17 +87,17 @@ nav {
 }
 
 .menu a {
-    color: rgba(255, 255, 255, 0.7); /* Blanco un poco transparente (elegante) */
+    color: rgba(255, 255, 255, 0.8); /* Blanco suave */
     text-decoration: none;
     font-weight: 600;
     font-size: 1.1rem;
     transition: all 0.3s ease;
 }
 
-/* Al pasar el ratón, en vez de rojo, se ilumina en BLANCO PURO */
+/* Al pasar el ratón se ilumina en blanco puro */
 .menu a:hover, .menu a.activo {
     color: #ffffff; 
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.6); /* Efecto neón suave */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Brillo neón */
 }
 
 /* --- CABECERAS--- */
