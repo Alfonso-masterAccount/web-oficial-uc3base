@@ -259,26 +259,26 @@ footer {
 .caja-logos {
     display: flex;
     align-items: center;
-    gap: 0px; /* Quitamos todo el espacio entre elementos */
+    gap: 0; /* Cero espacio entre elementos */
 }
 
-/* Logo de la Universidad */
+/* 3. LOGO DE LA UNIVERSIDAD (Ajuste final) */
 .footer-logo-uni {
-    height: 80px; /* Mantén el tamaño que te gustó (vi 80px en tu foto) */
+    height: 75px; /* Tamaño intermedio perfecto */
     width: auto;
     
-    /* TRUCO MAESTRO: Margen negativo para comerse el espacio vacío */
-    margin-left: -20px; 
+    /* MARGEN NEGATIVO: Ajustado para "abrazar" a tu logo sin la línea */
+    margin-left: -15px; 
     
-    /* Mantén tu filtro de color (si ya se ve blanco, déjalo como lo tengas) */
-    /* filter: brightness(0) invert(1); <--- Descomenta esto si se vuelve negro */
+    /* Tu filtro blanco */
+    filter: brightness(0) invert(1); 
     
     opacity: 0.9;
     transition: all 0.3s ease;
     
-    /* Ajuste fino vertical para que el texto "Universidad" quede centrado con tu círculo */
+    /* Centrado óptico vertical */
     position: relative;
-    top: 2px; 
+    top: 3px; 
 }
 
 .footer-logo {
@@ -293,9 +293,7 @@ footer {
 }
 
 .separador-logos {
-    width: 1px;
-    height: 40px;
-    background-color: #333; /* Una línea fina vertical entre los logos */
+    display:none;
 }
 
 /* --- Resto de estilos del footer (igual que antes) --- */
