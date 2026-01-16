@@ -304,16 +304,69 @@ footer {
     font-family: 'Orbitron', sans-serif;
 }
 
+/* --- ESTILO CONTACTO INTERACTIVO --- */
+
 .dato-contacto {
     display: flex;
-    align-items: flex-start;
+    align-items: center; /* Centrado vertical perfecto */
     gap: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 20px; /* Más aire entre elementos */
+    
+    /* 1. ELIMINAR ESTILO DE ENLACE DE NAVEGADOR */
+    text-decoration: none !important; /* Forzamos quitar subrayado */
+    color: #b0b0b0; /* Gris técnico suave */
+    font-size: 0.95rem;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Animación fluida */
 }
 
-.dato-contacto a { color: #ccc; text-decoration: none; transition: color 0.3s; }
-.dato-contacto a:hover { color: #c21c24; }
-.icono-rojo { color: #c21c24; font-size: 1.1rem; margin-top: 4px; }
+/* Evitar el morado de "visitado" */
+.dato-contacto:visited, .dato-contacto:active, .dato-contacto:focus {
+    color: #b0b0b0;
+    text-decoration: none;
+}
+
+/* 2. ICONOS ESTILO "TECH" (Círculo con brillo) */
+.icono-tech {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Tamaño fijo del círculo */
+    width: 35px;
+    height: 35px;
+    flex-shrink: 0; /* Que no se aplaste si el texto es largo */
+    
+    background: rgba(194, 28, 36, 0.1); /* Fondo rojo muy transparente */
+    border: 1px solid rgba(194, 28, 36, 0.3); /* Borde rojo sutil */
+    border-radius: 50%; /* Círculo perfecto */
+    color: #c21c24; /* Color del icono */
+    
+    transition: all 0.3s ease;
+}
+
+/* 3. EFECTO HOVER (AL PASAR EL RATÓN) */
+.dato-contacto:hover {
+    color: white; /* Texto se ilumina a blanco */
+    transform: translateX(8px); /* Desplazamiento lateral */
+}
+
+.dato-contacto:hover .icono-tech {
+    background: #c21c24; /* El círculo se llena de rojo */
+    color: white; /* El icono se vuelve blanco */
+    box-shadow: 0 0 15px rgba(194, 28, 36, 0.6); /* Resplandor neón */
+    transform: scale(1.1); /* Crece un poquito */
+}
+
+/* Ajuste para móviles */
+@media (max-width: 768px) {
+    .dato-contacto {
+        justify-content: center; /* Centrar en móvil */
+        text-align: left; /* Pero mantener texto alineado a la izq visualmente */
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
 
 /* Columna Derecha: Botones Redes */
 .redes-botones {
