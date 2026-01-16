@@ -258,7 +258,7 @@ footer {
 .caja-logos {
     display: flex; /* Pone los logos uno al lado del otro */
     align-items: center; /* Los centra verticalmente */
-    gap: 15px; /* Espacio entre ellos */
+    gap: 10px; /* Espacio entre ellos */
     margin-bottom: 20px;
 }
 
@@ -270,7 +270,7 @@ footer {
 /* El logo de la UC3M suele ser rectangular, ajustamos para que no se vea enorme */
 /* Logo de la Universidad (Versión Horizontal Blanca) */
 .footer-logo-uni {
-    height: 60px; /* Altura controlada para que no sea gigante */
+    height: 80px; /* Altura controlada para que no sea gigante */
     width: auto;  /* Que se estire a lo ancho lo que necesite */
     
     /* IMPORTANTE: Quitamos el filtro invertido porque tu imagen YA es blanca */
