@@ -605,3 +605,20 @@ form input:focus, form textarea:focus {
     from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
+/* --- ARREGLO FINAL COPYRIGHT --- */
+.copyright-bar {
+    background-color: #000;
+    width: 100%;        /* Ocupar todo el ancho */
+    text-align: center; /* Centrar el texto */
+    padding: 20px 0;
+    border-top: 1px solid #1a1a1a;
+    color: #777;
+    font-size: 0.85rem;
+    margin-top: 50px;
+}
+
+.copyright-bar p {
+    margin: 0;         /* Quitar márgenes extra del párrafo */
+    text-align: center;
+}
