@@ -268,11 +268,22 @@ footer {
 }
 
 /* El logo de la UC3M suele ser rectangular, ajustamos para que no se vea enorme */
+/* Logo de la Universidad (Versión Horizontal Blanca) */
 .footer-logo-uni {
-    height: 45px; /* Altura fija para alinearse con el tuyo */
-    width: auto;
-    filter: grayscale(100%) brightness(200%); /* TRUCO: Lo hace blanco y negro para que pegue con el diseño dark */
-    opacity: 0.8;
+    height: 35px; /* Altura controlada para que no sea gigante */
+    width: auto;  /* Que se estire a lo ancho lo que necesite */
+    
+    /* IMPORTANTE: Quitamos el filtro invertido porque tu imagen YA es blanca */
+    filter: none; 
+    
+    opacity: 0.9; /* Casi totalmente opaco */
+    transition: all 0.3s ease;
+}
+
+/* Efecto al pasar el ratón */
+.enlace-uni:hover .footer-logo-uni {
+    opacity: 1; 
+    transform: scale(1.05); /* Crece un poquito */
 }
 
 .separador-logos {
