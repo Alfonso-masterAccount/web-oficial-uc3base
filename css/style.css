@@ -281,6 +281,11 @@ footer {
     top: 2px; 
 }
 
+.footer-logo {
+    width: 70px; /* Tamaño de tu logo */
+    height: auto;
+}
+
 /* Efecto al pasar el ratón */
 .enlace-uni:hover .footer-logo-uni {
     opacity: 1; 
