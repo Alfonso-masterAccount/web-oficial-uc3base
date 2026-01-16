@@ -300,22 +300,49 @@ footer {
 .dato-contacto a:hover { color: #c21c24; }
 .icono-rojo { color: #c21c24; font-size: 1.1rem; margin-top: 4px; }
 
-.redes-botones { display: flex; gap: 10px; }
-.btn-social {
-    display: flex; justify-content: center; align-items: center;
-    width: 45px; height: 45px;
-    background: #222; color: white; border-radius: 5px;
-    font-size: 1.2rem; text-decoration: none; transition: all 0.3s ease;
+/* Columna Derecha: Botones Redes */
+.redes-botones {
+    display: flex;
+    gap: 15px; /* Un poco más de separación para que respiren */
 }
 
-.insta:hover { background: #E1306C; transform: translateY(-3px); }
-.github:hover { background: #6e5494; transform: translateY(-3px); }
-.linkedin:hover { background: #0077b5; transform: translateY(-3px); }
+.btn-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    color: white; /* Icono blanco */
+    border-radius: 8px; /* Bordes un poco más redondeados (estilo app) */
+    font-size: 1.4rem;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3); /* Sombra suave para dar volumen */
+}
 
-.copyright-bar {
-    background-color: #000; text-align: center;
-    padding: 20px; border-top: 1px solid #1a1a1a;
-    font-size: 0.85rem; color: #777;
+/* --- COLORES DE MARCA (Siempre visibles) --- */
+
+/* Instagram: El famoso degradado */
+.insta {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+/* GitHub: Gris oscuro característico (Octoverse) */
+.github {
+    background-color: #24292e; 
+    border: 1px solid #444; /* Borde fino para separarlo del fondo negro */
+}
+
+/* LinkedIn: Azul Corporativo */
+.linkedin {
+    background-color: #0077b5;
+}
+
+/* --- EFECTO AL PASAR EL RATÓN (HOVER) --- */
+.btn-social:hover {
+    transform: translateY(-5px); /* Saltito hacia arriba */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.5); /* Sombra más fuerte al flotar */
+    filter: brightness(1.1); /* Se iluminan un poquito */
 }
 
 @media (max-width: 768px) {
