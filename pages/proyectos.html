@@ -23,11 +23,15 @@
             <span class="nombre-web">UC3-BASE</span>
         </a>
 
-        <ul class="menu">
+        <button class="menu-toggle" aria-label="Abrir menú">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <ul class="menu" id="miMenu">
             <li><a href="../index.html">Inicio</a></li>
             <li><a href="proyectos.html">Proyectos</a></li>
             <li><a href="equipo.html">Equipo</a></li>
-            <li><a href="contacto.html">Únete</a></li>
+            <li><a href="contacto.html">ÚNETE</a></li>
         </ul>
 
         <div class="nav-derecha"></div>
@@ -83,5 +87,13 @@
         <p>Desarrollado con código puro 🚀</p>
     </footer>
 
+    <script>
+        const botonMenu = document.querySelector('.menu-toggle');
+        const menu = document.getElementById('miMenu');
+
+        botonMenu.addEventListener('click', () => {
+            menu.classList.toggle('activado');
+        });
+    </script>
 </body>
 </html>

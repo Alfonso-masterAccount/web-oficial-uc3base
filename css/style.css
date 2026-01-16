@@ -403,3 +403,87 @@ form input:focus, form textarea:focus {
     font-size: 4.5rem; /* Gigante */
     margin-bottom: 20px;
 }
+
+/* --- ESTILO DEL BOTÓN HAMBURGUESA (Por defecto oculto en PC) --- */
+.menu-toggle {
+    display: none; /* En PC no se ve */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* --- VERSIÓN MÓVIL (PANTALLAS PEQUEÑAS) --- */
+@media (max-width: 768px) {
+    
+    /* 1. Reorganizamos la barra de navegación */
+    nav {
+        /* Cambiamos el Grid de 3 columnas a 2: Logo | Botón */
+        grid-template-columns: 1fr auto; 
+        padding: 15px 20px; /* Menos relleno lateral */
+    }
+
+    /* Ocultamos el hueco vacío de la derecha porque ya no cabe */
+    .nav-derecha { display: none; }
+
+    /* Mostramos el botón hamburguesa */
+    .menu-toggle { display: block; }
+
+    /* 2. Transformamos el menú en una lista vertical desplegable */
+    .menu {
+        position: absolute;
+        top: 100%; /* Se coloca justo debajo de la barra roja */
+        left: 0;
+        width: 100%;
+        background: rgba(60, 5, 10, 0.98); /* Rojo muy oscuro, casi sólido */
+        backdrop-filter: blur(15px);
+        flex-direction: column; /* Lista vertical */
+        align-items: center;
+        padding: 20px 0;
+        gap: 20px;
+        
+        /* ESTADO INICIAL: OCULTO */
+        display: none; 
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* ESTADO ABIERTO (Esta clase la pone JS) */
+    .menu.activado {
+        display: flex;
+        animation: bajarMenu 0.3s ease-out;
+    }
+
+    /* 3. ARREGLO DE TÍTULOS GIGANTES (Lo que se veía roto) */
+    
+    /* Título de Portada (Antes 4.5rem -> Ahora 2.5rem) */
+    .hero-inicio h1 {
+        font-size: 2.8rem; 
+        line-height: 1.2;
+    }
+    
+    /* Texto de párrafo portada */
+    .hero-inicio p {
+        font-size: 1.1rem;
+        padding: 0 10px;
+    }
+
+    /* Títulos de otras páginas */
+    header h1 {
+        font-size: 2.2rem;
+    }
+    
+    /* Ajuste del logo para que no ocupe tanto */
+    .nombre-web {
+        font-size: 1.1rem; 
+    }
+    .logo {
+        width: 35px;
+    }
+}
+
+/* Animación para que el menú baje suave */
+@keyframes bajarMenu {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
