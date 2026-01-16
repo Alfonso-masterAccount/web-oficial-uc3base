@@ -258,8 +258,7 @@ footer {
 .caja-logos {
     display: flex; /* Pone los logos uno al lado del otro */
     align-items: center; /* Los centra verticalmente */
-    gap: 10px; /* Espacio entre ellos */
-    margin-bottom: 20px;
+    gap: 5px; /* Espacio entre ellos */
 }
 
 .footer-logo {
