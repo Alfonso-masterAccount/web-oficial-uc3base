@@ -234,14 +234,94 @@ section {
 }
 
 /* --- FOOTER (PIE DE PÁGINA) --- */
+/* --- FOOTER PROFESIONAL --- */
 footer {
-    background-color: #05060a;
-    text-align: center;
-    padding: 40px 20px;
+    background-color: #080808;
+    color: #cccccc;
+    padding-top: 60px;
+    border-top: 1px solid #222;
     margin-top: 50px;
-    border-top: 1px solid #333;
-    font-size: 0.9rem;
-    color: #777;
+    font-size: 0.95rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 40px 20px;
+    text-align: left;
+}
+
+/* --- NUEVO: ESTILO PARA LOS DOS LOGOS --- */
+.caja-logos {
+    display: flex; /* Pone los logos uno al lado del otro */
+    align-items: center; /* Los centra verticalmente */
+    gap: 15px; /* Espacio entre ellos */
+    margin-bottom: 20px;
+}
+
+.footer-logo {
+    width: 70px; /* Tamaño de tu logo */
+    height: auto;
+}
+
+/* El logo de la UC3M suele ser rectangular, ajustamos para que no se vea enorme */
+.footer-logo-uni {
+    height: 45px; /* Altura fija para alinearse con el tuyo */
+    width: auto;
+    filter: grayscale(100%) brightness(200%); /* TRUCO: Lo hace blanco y negro para que pegue con el diseño dark */
+    opacity: 0.8;
+}
+
+.separador-logos {
+    width: 1px;
+    height: 40px;
+    background-color: #333; /* Una línea fina vertical entre los logos */
+}
+
+/* --- Resto de estilos del footer (igual que antes) --- */
+.footer-col h3 {
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.dato-contacto {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.dato-contacto a { color: #ccc; text-decoration: none; transition: color 0.3s; }
+.dato-contacto a:hover { color: #c21c24; }
+.icono-rojo { color: #c21c24; font-size: 1.1rem; margin-top: 4px; }
+
+.redes-botones { display: flex; gap: 10px; }
+.btn-social {
+    display: flex; justify-content: center; align-items: center;
+    width: 45px; height: 45px;
+    background: #222; color: white; border-radius: 5px;
+    font-size: 1.2rem; text-decoration: none; transition: all 0.3s ease;
+}
+
+.insta:hover { background: #E1306C; transform: translateY(-3px); }
+.github:hover { background: #6e5494; transform: translateY(-3px); }
+.linkedin:hover { background: #0077b5; transform: translateY(-3px); }
+
+.copyright-bar {
+    background-color: #000; text-align: center;
+    padding: 20px; border-top: 1px solid #1a1a1a;
+    font-size: 0.85rem; color: #777;
+}
+
+@media (max-width: 768px) {
+    .footer-grid { grid-template-columns: 1fr; text-align: center; gap: 30px; }
+    .caja-logos { justify-content: center; } /* Centrar logos en móvil */
+    .dato-contacto, .redes-botones { justify-content: center; }
 }
 
 /* --- FOTOS DE PROYECTOS (ESTO TIENE QUE ESTAR FUERA DEL MEDIA) --- */
