@@ -1095,33 +1095,54 @@ form input:focus, form textarea:focus {
 
 
 /* --- ARREGLO DE LEGIBILIDAD TEXTO --- */
+/* --- CAPA 2: INFORMACIÓN OCULTA (Hover) --- */
 .info-hover {
-    padding: 25px; /* Más relleno para que el texto no toque bordes */
-    background: rgba(5, 5, 5, 0.95); /* Fondo casi negro total para contraste máximo */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(5, 5, 5, 0.95); /* Fondo oscuro */
+    
+    /* FLEXBOX PARA CENTRADO PERFECTO */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* <--- ESTO LO CENTRA VERTICALMENTE (EJE Y) */
+    align-items: center;     /* <--- ESTO LO CENTRA HORIZONTALMENTE (EJE X) */
+    
+    padding: 20px; /* Margen general de seguridad */
+    box-sizing: border-box; /* Asegura que el padding no deforme la caja */
+    
+    /* Animación de entrada */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+    z-index: 3;
 }
 
-/* Contenedor seguro para el texto */
+/* Contenedor del texto (Con límites para no cortarse) */
 .texto-scroll {
-    /* FLEX-GROW: 1 le dice: "Ocupa todo el espacio vertical disponible" */
-    flex-grow: 1; 
+    width: 100%;             /* Ocupa todo el ancho disponible */
+    max-height: 200px;       /* Si el texto es eterno, hará scroll dentro */
+    overflow-y: auto;        /* Scroll vertical si hace falta */
     
-    /* Si el texto es más alto que el espacio disponible, permite scroll */
-    overflow-y: auto; 
+    margin-bottom: 20px;     /* Separación con los iconos de abajo */
+    padding: 0 10px;         /* <--- MARGEN LATERAL EXTRA PARA QUE NO SE CORTE */
+    box-sizing: border-box;  /* Vital para respetar los márgenes */
     
-    margin-bottom: 15px; /* Espacio antes de los iconos de abajo */
-    
-    /* Ocultamos scrollbar fea */
+    /* Ocultar barra de scroll fea */
     scrollbar-width: none; 
 }
 .texto-scroll::-webkit-scrollbar { display: none; }
 
-/* Estilo del párrafo de texto dentro del hover */
+/* El párrafo en sí */
 .info-hover p {
     color: #e0e0e0;
     font-size: 0.95rem;
-    line-height: 1.6; /* Buen espaciado para leer */
-    margin: 0; /* Quitamos márgenes extra */
+    line-height: 1.6;
+    margin: 0;
+    text-align: center; /* Texto centrado horizontalmente */
     
-    /* LA CLAVE PARA CENTRARLO: */
-    text-align: center;
+    /* Aseguramos que las palabras largas bajen de línea y no se corten */
+    word-wrap: break-word; 
 }
