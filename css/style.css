@@ -1115,9 +1115,13 @@ form input:focus, form textarea:focus {
 }
 .texto-scroll::-webkit-scrollbar { display: none; }
 
+/* Estilo del párrafo de texto dentro del hover */
 .info-hover p {
-    color: #e0e0e0; /* Blanco un poco grisáceo para no cansar la vista */
-    font-size: 0.95rem; /* Tamaño legible */
-    line-height: 1.6; /* Separación entre líneas para leer bien */
-    margin: 0;
+    color: #e0e0e0;
+    font-size: 0.95rem;
+    line-height: 1.6; /* Buen espaciado para leer */
+    margin: 0; /* Quitamos márgenes extra */
+    
+    /* LA CLAVE PARA CENTRARLO: */
+    text-align: center;
 }
