@@ -1198,10 +1198,14 @@ form input:focus, form textarea:focus {
 }
 
 /* Efecto Hover individual en cada botón */
+/* Efecto Hover individual en cada botón (LinkedIn y base del correo) */
 .btn-contact:hover {
     background: #c21c24; /* Rojo UC3M */
     border-color: #c21c24;
-    transform: scale(1.2) rotate(5deg); /* Crece y gira un pelín */
+    
+    /* CAMBIO: Solo escala un poquito, SIN rotar */
+    transform: scale(1.1); 
+    
     box-shadow: 0 0 15px rgba(194, 28, 36, 0.6); /* Brillo neón */
 }
 
@@ -1282,14 +1286,18 @@ form input:focus, form textarea:focus {
 
 /* --- INTERACCIÓN --- */
 .email-pill:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.2); /* Solo se aclara el fondo */
     border-color: white;
+    
+    /* IMPORTANTE: Forzamos que NO rote ni escale exageradamente */
+    transform: none !important; 
 }
 
 .email-pill.activo {
-    max-width: 320px;     /* Se abre */
-    background: #c21c24;  /* Rojo */
+    max-width: 320px;
+    background: #c21c24;
     border-color: #c21c24;
+    transform: none !important; /* Aseguramos que se mantenga recto */
 }
 
 .email-pill.activo .email-texto {
