@@ -1232,14 +1232,35 @@ form input:focus, form textarea:focus {
 }
 
 /* Estilo específico del ICONO (Para asegurar que se vea) */
+.email-pill {
+    /* ANULAMOS ESTILOS DE .btn-contact */
+    width: auto !important; /* Importante para que pueda crecer */
+    justify-content: flex-start !important; /* <--- LA CLAVE: Alineado a la izquierda */
+    
+    /* Estado Inicial */
+    max-width: 40px;      /* Círculo cerrado */
+    height: 40px;
+    border-radius: 40px;
+    
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    
+    display: flex;
+    align-items: center;
+    overflow: hidden;     
+    cursor: pointer;
+    
+    transition: max-width 0.5s ease, background 0.3s ease, border-color 0.3s;
+}
+
 .email-pill i {
-    color: white !important; /* Forzamos blanco */
+    color: white !important;
     font-size: 1rem;
 }
 
 /* Zona del icono (Siempre visible y cuadrada) */
 .icono-zona {
-    min-width: 40px;      /* Espacio fijo para el icono */
+    min-width: 40px;      /* Ancho mínimo obligatorio */
     height: 40px;
     display: flex;
     justify-content: center;
@@ -1248,34 +1269,31 @@ form input:focus, form textarea:focus {
 
 /* El Texto del correo (Oculto al principio) */
 .email-texto {
-    white-space: nowrap;  /* Texto en una sola línea */
-    padding-right: 20px;  /* Margen final para que respire */
-    opacity: 0;           /* Invisible inicialmente */
+    white-space: nowrap;
+    padding-right: 20px;
+    opacity: 0;
     font-size: 0.85rem;
     color: white;
-    font-family: sans-serif;
     
-    /* Animación de aparición */
+    /* Animación */
     transform: translateX(-10px);
     transition: all 0.3s ease;
 }
 
-/* --- INTERACCIÓN: HOVER (Solo pasar el ratón) --- */
+/* --- INTERACCIÓN --- */
 .email-pill:hover {
-    background: rgba(255, 255, 255, 0.2); /* Solo se aclara un poco el fondo */
-    border-color: white; /* El borde brilla más */
-    /* ¡ELIMINADA LA INCLINACIÓN Y EL ZOOM! */
+    background: rgba(255, 255, 255, 0.2);
+    border-color: white;
 }
 
-/* --- INTERACCIÓN: ACTIVO (Al hacer Clic) --- */
 .email-pill.activo {
-    max-width: 320px;     /* Se expande lo suficiente para el correo */
-    background: #c21c24;  /* Rojo corporativo */
+    max-width: 320px;     /* Se abre */
+    background: #c21c24;  /* Rojo */
     border-color: #c21c24;
 }
 
 .email-pill.activo .email-texto {
-    opacity: 1;           /* Aparece el texto */
+    opacity: 1;
     transform: translateX(0);
-    transition-delay: 0.1s; /* Espera un pelín a que se abra */
+    transition-delay: 0.1s;
 }
