@@ -37,36 +37,134 @@
         <div class="nav-derecha"></div>
     </nav>
 
-    <header>
-        <h1>Misiones Activas</h1>
-        <p>Tecnología aeroespacial desarrollada por estudiantes</p>
+    <header class="header-equipo">
+        <h1>PROYECTOS ACTIVOS</h1>
+        <p>Ingeniería aplicada: Desde tierra hasta la órbita.</p>
     </header>
-    <section>
-        <div class="grid-equipo">
+
+    <main class="contenedor-paneles">
+
+        <article class="proyecto-card">
             
-            <div class="tarjeta-miembro">
-                <img src="../img/CubeSat.jpg" alt="Foto del CubeSat" class="foto-proyecto">
-                <h3>Nanosatélites</h3>
-                <p>Nanosatélite de 1U para medición de radiación en órbita baja.</p>
-                <a href="#" class="boton-espacial" style="font-size: 0.8rem; padding: 8px 20px;">Ver Estado</a>
+            <div class="proyecto-visual">
+                <img src="../img/antena_placeholder.jpg" alt="Diseño Antena Yagi" class="img-proyecto">
+                <div class="overlay-tech">
+                    <span class="status-tag">EN CONSTRUCCIÓN</span>
+                </div>
             </div>
 
-            <div class="tarjeta-miembro">
-                <img src="../img/Antena.jpg" alt="Antenas" class="foto-proyecto">
-                <h3>Radiofrecuencia</h3>
-                <p>Antenas Yagi y Dipolo para seguimiento de satélites NOAA.</p>
-                <a href="#" class="boton-espacial" style="font-size: 0.8rem; padding: 8px 20px;">Ver Frecuencias</a>
+            <div class="proyecto-info">
+                <div class="proyecto-header">
+                    <i class="fas fa-broadcast-tower icono-titulo"></i>
+                    <h2>ESTACIÓN TERRENA</h2>
+                </div>
+                
+                <p class="intro-texto">
+                    Diseño y construcción de una estación de seguimiento automatizada para satélites meteorológicos (NOAA/Meteor) y cubestats universitarios en bandas VHF/UHF.
+                </p>
+
+                <div class="acordeon-container">
+                    
+                    <div class="item-acordeon">
+                        <button class="btn-acordeon">
+                            <span>¿QUÉ BUSCAMOS?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="contenido-acordeon">
+                            <p>Nuestro objetivo principal es establecer un enlace estable con satélites de órbita baja (LEO). Buscamos decodificar imágenes meteorológicas en tiempo real y recibir telemetría de otros equipos universitarios, sirviendo como nodo en la red global de estaciones terrestres (SatNOGS).</p>
+                        </div>
+                    </div>
+
+                    <div class="item-acordeon">
+                        <button class="btn-acordeon">
+                            <span>¿CÓMO LO HACEMOS?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="contenido-acordeon">
+                            <ul class="lista-tech">
+                                <li><strong>Antenas:</strong> Diseño Yagi-Uda cruzada para polarización circular.</li>
+                                <li><strong>Rotores:</strong> Sistema de seguimiento Azimut/Elevación controlado por Arduino.</li>
+                                <li><strong>SDR:</strong> Procesado de señal mediante RTL-SDR y GNU Radio.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div> </div>
+        </article>
+
+        <article class="proyecto-card reverso">
+            
+            <div class="proyecto-visual">
+                <img src="../img/satelite_placeholder.jpg" alt="Diseño CubeSat" class="img-proyecto">
+                <div class="overlay-tech">
+                    <span class="status-tag blue">FASE DE DISEÑO</span>
+                </div>
             </div>
 
-            <div class="tarjeta-miembro">
-                <img src="../img/Cohete.jpg" alt="Cohete" class="foto-proyecto">
-                <h3>Cohetería</h3>
-                <p>Aviónica y recuperación para cohetes de sondeo.</p>
-                <a href="#" class="boton-espacial" style="font-size: 0.8rem; padding: 8px 20px;">Ver Lanzamientos</a>
-            </div>
+            <div class="proyecto-info">
+                <div class="proyecto-header">
+                    <i class="fas fa-satellite icono-titulo"></i>
+                    <h2>CUBESAT 1U</h2>
+                </div>
+                
+                <p class="intro-texto">
+                    Desarrollo conceptual y simulación de un nanosatélite estándar 1U (10x10x10cm). El primer paso hacia nuestra propia misión espacial.
+                </p>
 
-        </div>
-    </section>
+                <div class="acordeon-container">
+                    
+                    <div class="item-acordeon">
+                        <button class="btn-acordeon">
+                            <span>MISIÓN & OBJETIVOS</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="contenido-acordeon">
+                            <p>Validar la electrónica de vuelo (OBC) desarrollada por la asociación y probar un sistema de comunicaciones experimental de baja potencia. El diseño prioriza la modularidad y el bajo coste usando componentes COTS (Commercial Off-The-Shelf).</p>
+                        </div>
+                    </div>
+
+                    <div class="item-acordeon">
+                        <button class="btn-acordeon">
+                            <span>ESPECIFICACIONES</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="contenido-acordeon">
+                            <ul class="lista-tech">
+                                <li><strong>Dimensiones:</strong> 10 x 10 x 10 cm (1U).</li>
+                                <li><strong>Peso:</strong> < 1.33 kg.</li>
+                                <li><strong>Energía:</strong> Paneles solares desplegables y gestión por EPS inteligente.</li>
+                                <li><strong>Comunicaciones:</strong> Transceptor UHF con protocolo AX.25.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </article>
+
+    </main>
+    
+    <script>
+        const acordeones = document.querySelectorAll('.btn-acordeon');
+
+        acordeones.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Alternar la clase activo en el botón
+                btn.classList.toggle('activo');
+                
+                // Encontrar el contenido que va justo después del botón
+                const contenido = btn.nextElementSibling;
+                
+                if (btn.classList.contains('activo')) {
+                    // Si está activo, le damos altura (lo abrimos)
+                    contenido.style.maxHeight = contenido.scrollHeight + "px";
+                } else {
+                    // Si no, altura cero (lo cerramos)
+                    contenido.style.maxHeight = 0;
+                }
+            });
+        });
+    </script>
 
     <footer>
         <div class="footer-grid">
