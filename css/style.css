@@ -1493,67 +1493,87 @@ form input:focus, form textarea:focus {
     }
 }
 
-/* --- AJUSTES MÓVILES PARA EQUIPO (MODO COMPACTO) --- */
+/* --- AJUSTES MÓVILES: MODO ULTRA-COMPACTO --- */
 @media (max-width: 768px) {
 
-    /* 1. Reducir márgenes del contenedor principal */
+    /* 1. Ajustes del Contenedor Principal */
     .contenedor-paneles {
-        padding: 10px;       /* Menos borde lateral */
-        gap: 40px;           /* Menos espacio entre el bloque Modulación y Estación */
+        padding: 10px 5px; /* Casi sin bordes laterales */
+        gap: 30px;
     }
 
-    /* 2. Adelgazar el Panel de Mando (La caja gris oscura) */
     .panel-mando {
-        padding: 15px;       /* Antes 30px -> Ahora más fino */
-        border-radius: 10px;
+        padding: 15px 10px; /* Panel muy ajustado */
+        border-radius: 8px;
     }
 
-    /* 3. Cabeceras más pequeñas y apiladas */
+    /* 2. Cabeceras Minimalistas */
     .cabecera-viva {
-        flex-direction: column; /* Título arriba, Animación abajo */
-        gap: 15px;
+        flex-direction: column;
+        gap: 10px;
         text-align: center;
-        padding-bottom: 15px;
-        margin-bottom: 20px;
+        padding-bottom: 10px;
+        margin-bottom: 15px;
     }
 
-    .texto-titulo h2 {
-        font-size: 1.8rem;   /* Letra más pequeña para que no ocupe 3 líneas */
-    }
+    .texto-titulo h2 { font-size: 1.6rem; }
+    .subtitulo-tech { font-size: 0.65rem; }
 
-    .subtitulo-tech {
-        font-size: 0.7rem;
-    }
-
-    /* 4. TARJETAS DE MIEMBROS: Versión Mini */
+    /* 3. TARJETAS "MINI" (El cambio radical) */
     .miembro-card {
-        height: 280px;       /* BAJAMOS DE 350px A 280px (Mucho más manejable) */
-        min-width: 230px;    /* Un poco más estrechas */
+        height: 220px;       /* Mucho más bajita */
+        min-width: 200px;    /* Más estrecha */
+        border-radius: 8px;
     }
 
-    /* Ajustar tamaño de letra dentro de la tarjeta */
-    .miembro-card h3 {
-        font-size: 1.1rem;
+    /* Ajuste de textos visibles (Nombre y Rol) */
+    .info-visible {
+        padding: 10px; /* Menos relleno */
+        background: linear-gradient(to top, black 50%, transparent); /* Más oscuro para leer bien */
+    }
+
+    .miembro-card h3 { 
+        font-size: 0.95rem; /* Nombre más pequeño */
+        margin-bottom: 2px;
     }
     
-    .rol-tag {
-        font-size: 0.7rem;
+    .rol-tag { 
+        font-size: 0.6rem; /* Rol pequeñito */
     }
 
-    /* 5. Flechas de navegación más discretas */
+    /* 4. Ajuste del contenido oculto (Al tocar la tarjeta) */
+    .info-hover { 
+        padding: 10px; 
+    }
+    
+    .texto-scroll { 
+        max-height: 60px; /* Scroll muy corto para que quepan los botones */
+        margin-bottom: 10px;
+    }
+    
+    .info-hover p { font-size: 0.8rem; }
+    
+    .tech-stack { 
+        font-size: 1.1rem; /* Iconos de tecnología más discretos */
+        gap: 10px;
+        margin-bottom: 0; 
+    }
+
+    /* 5. Botones de contacto en móvil */
+    .contact-slide {
+        margin-top: 10px;
+        transform: translateY(0); /* Que aparezcan directos, sin slide */
+        opacity: 1;
+    }
+    .btn-contact { width: 35px; height: 35px; font-size: 0.9rem; }
+
+    /* 6. Flechas de navegación pegadas a los bordes */
     .flecha-btn {
-        width: 35px;         /* Más pequeñas */
-        height: 35px;
-        font-size: 0.9rem;
-        background: rgba(194, 28, 36, 0.8); /* Un poco más transparentes */
+        width: 32px;
+        height: 32px;
+        font-size: 0.8rem;
+        background: rgba(194, 28, 36, 0.7); /* Más transparente */
     }
-    
-    /* Pegarlas un poco más al borde para ganar espacio */
-    .pre-btn { left: -10px; }
-    .nxt-btn { right: -10px; }
-    
-    /* 6. Ajustar el texto hover para la nueva altura */
-    .texto-scroll {
-        max-height: 120px; /* Menos espacio de scroll */
-    }
+    .pre-btn { left: -5px; }
+    .nxt-btn { right: -5px; }
 }
