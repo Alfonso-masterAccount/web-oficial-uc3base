@@ -913,3 +913,140 @@ form input:focus, form textarea:focus {
     0% { transform: scale(0.1); opacity: 1; border-width: 3px; }
     100% { transform: scale(1.5); opacity: 0; border-width: 0px; }
 }
+
+/* --- SLIDER DE MIEMBROS --- */
+.slider-contenedor {
+    display: flex; /* Esto pone los elementos en fila */
+    gap: 20px;
+    overflow-x: auto; /* Permite scroll horizontal */
+    padding-bottom: 20px; /* Espacio para el scrollbar */
+    scroll-behavior: smooth; /* Deslizamiento suave */
+}
+
+/* Personalizamos la barra de scroll para que sea "Tech" */
+.slider-contenedor::-webkit-scrollbar {
+    height: 8px;
+}
+.slider-contenedor::-webkit-scrollbar-track {
+    background: #0a0a0a;
+    border-radius: 4px;
+}
+.slider-contenedor::-webkit-scrollbar-thumb {
+    background: #333; /* Color de la barra */
+    border-radius: 4px;
+}
+.slider-contenedor::-webkit-scrollbar-thumb:hover {
+    background: #c21c24; /* Se pone roja al agarrarla */
+}
+
+/* --- TARJETA DE MIEMBRO --- */
+.miembro-card {
+    position: relative;
+    min-width: 260px; /* Ancho fijo para todas las tarjetas */
+    height: 350px;    /* Altura fija */
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden; /* Para que la imagen no se salga */
+    border: 1px solid #333;
+    transition: all 0.3s ease;
+    flex-shrink: 0; /* Evita que se aplasten */
+}
+
+/* La imagen de fondo */
+.img-fondo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s ease;
+    opacity: 0.7; /* Un poco oscura por defecto para leer el nombre */
+}
+
+/* --- CAPA 1: INFORMACIÓN VISIBLE (Nombre y Rol) --- */
+.info-visible {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to top, black 20%, transparent);
+    z-index: 2;
+    transition: transform 0.3s ease;
+}
+
+.miembro-card h3 {
+    color: white;
+    font-size: 1.4rem;
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.rol-tag {
+    color: #c21c24;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* --- CAPA 2: INFORMACIÓN OCULTA (Hover) --- */
+.info-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 10, 10, 0.9); /* Fondo oscuro casi opaco */
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    /* TRUCO: Inicialmente invisible y desplazado */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+    z-index: 3;
+}
+
+.info-hover p {
+    color: #ddd;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.tech-stack {
+    display: flex;
+    gap: 15px;
+    font-size: 1.5rem;
+    color: #c21c24;
+}
+
+/* --- EFECTO AL PASAR EL RATÓN (HOVER) --- */
+
+/* 1. La imagen se hace grande y borrosa */
+.miembro-card:hover .img-fondo {
+    transform: scale(1.1);
+    filter: blur(3px);
+    opacity: 0.4;
+}
+
+/* 2. El nombre sube un poco o desaparece (opcional, aquí lo ocultamos suavemente) */
+.miembro-card:hover .info-visible {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+/* 3. Aparece la descripción */
+.miembro-card:hover .info-hover {
+    opacity: 1;
+    transform: translateY(0); /* Vuelve a su sitio */
+}
+
+/* 4. Borde rojo brillante */
+.miembro-card:hover {
+    border-color: #c21c24;
+    box-shadow: 0 0 15px rgba(194, 28, 36, 0.4);
+}
