@@ -1210,60 +1210,72 @@ form input:focus, form textarea:focus {
 .email:hover { background: #ea4335; border-color: #ea4335; box-shadow: 0 0 15px rgba(234, 67, 53, 0.6); }
 /* --- BOTÓN CORREO EXPANDIBLE (Efecto Píldora) --- */
 
+/* --- BOTÓN CORREO EXPANDIBLE (Versión Sobria) --- */
+
 .email-pill {
-    /* Estado Inicial (Círculo) */
+    /* Estado Inicial (Círculo cerrado) */
     width: auto;
-    max-width: 40px; /* Tamaño del círculo */
+    max-width: 40px;      /* Ancho inicial (solo icono) */
     height: 40px;
-    border-radius: 40px; /* Muy redondeado */
+    border-radius: 40px;  /* Bordes totalmente redondos */
+    
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
+    
     display: flex;
-    align-items: center;
-    overflow: hidden; /* Lo que se salga del círculo, no se ve */
+    align-items: center;  /* Centrado vertical */
+    overflow: hidden;     /* Lo que se salga, no se ve */
     cursor: pointer;
-    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1); /* Animación muy suave */
-    color: white;
+    
+    /* Solo animamos el ancho y el color de fondo */
+    transition: max-width 0.5s ease, background 0.3s ease;
 }
 
-/* El Icono siempre visible */
+/* Estilo específico del ICONO (Para asegurar que se vea) */
+.email-pill i {
+    color: white !important; /* Forzamos blanco */
+    font-size: 1rem;
+}
+
+/* Zona del icono (Siempre visible y cuadrada) */
 .icono-zona {
-    min-width: 40px; /* Ocupa todo el espacio inicial */
+    min-width: 40px;      /* Espacio fijo para el icono */
     height: 40px;
     display: flex;
-    align-items: center;
     justify-content: center;
-    font-size: 1.1rem;
+    align-items: center;
 }
 
-/* El Texto (Inicialmente oculto) */
+/* El Texto del correo (Oculto al principio) */
 .email-texto {
-    white-space: nowrap; /* Que no salte de línea */
-    padding-right: 15px; /* Espacio al final */
-    opacity: 0; /* Invisible */
+    white-space: nowrap;  /* Texto en una sola línea */
+    padding-right: 20px;  /* Margen final para que respire */
+    opacity: 0;           /* Invisible inicialmente */
     font-size: 0.85rem;
-    color: #eee;
-    transform: translateX(-10px); /* Empieza un poco a la izquierda */
+    color: white;
+    font-family: sans-serif;
+    
+    /* Animación de aparición */
+    transform: translateX(-10px);
     transition: all 0.3s ease;
-    font-family: 'Montserrat', sans-serif; /* O tu fuente normal */
 }
 
-/* --- ESTADO ACTIVO (Cuando haces clic) --- */
+/* --- INTERACCIÓN: HOVER (Solo pasar el ratón) --- */
+.email-pill:hover {
+    background: rgba(255, 255, 255, 0.2); /* Solo se aclara un poco el fondo */
+    border-color: white; /* El borde brilla más */
+    /* ¡ELIMINADA LA INCLINACIÓN Y EL ZOOM! */
+}
+
+/* --- INTERACCIÓN: ACTIVO (Al hacer Clic) --- */
 .email-pill.activo {
-    max-width: 300px; /* Se estira hasta que quepa el texto */
-    background: #c21c24; /* Se pone rojo UC3M */
+    max-width: 320px;     /* Se expande lo suficiente para el correo */
+    background: #c21c24;  /* Rojo corporativo */
     border-color: #c21c24;
-    box-shadow: 0 0 15px rgba(194, 28, 36, 0.4);
 }
 
 .email-pill.activo .email-texto {
-    opacity: 1; /* Aparece el texto */
-    transform: translateX(0); /* Se mueve a su sitio */
-    transition-delay: 0.1s; /* Espera un pelín a que se abra el botón */
-}
-
-/* Efecto Hover simple (antes de hacer clic) */
-.email-pill:hover {
-    border-color: #fff;
-    background: rgba(255, 255, 255, 0.2);
+    opacity: 1;           /* Aparece el texto */
+    transform: translateX(0);
+    transition-delay: 0.1s; /* Espera un pelín a que se abra */
 }
