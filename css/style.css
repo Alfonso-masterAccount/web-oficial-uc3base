@@ -1050,3 +1050,73 @@ form input:focus, form textarea:focus {
     border-color: #c21c24;
     box-shadow: 0 0 15px rgba(194, 28, 36, 0.4);
 }
+
+/* --- NUEVO WRAPPER (Para posicionar las flechas) --- */
+.slider-wrapper {
+    position: relative; /* Necesario para que las flechas floten sobre él */
+    width: 100%;
+    padding: 0 20px; /* Espacio para no tapar el contenido */
+}
+
+/* Ocultar la barra de scroll fea (pero sigue funcionando) */
+.slider-contenedor::-webkit-scrollbar {
+    display: none;
+}
+.slider-contenedor {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* --- BOTONES DE FLECHA --- */
+.flecha-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); /* Centrado vertical exacto */
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(194, 28, 36, 0.9); /* Rojo corporativo */
+    color: white;
+    cursor: pointer;
+    z-index: 10; /* Por encima de las fotos */
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flecha-btn:hover {
+    background: #ff4444;
+    transform: translateY(-50%) scale(1.1); /* Crece un poquito */
+}
+
+.pre-btn { left: -20px; } /* Posición flecha izquierda */
+.nxt-btn { right: -20px; } /* Posición flecha derecha */
+
+
+/* --- ARREGLO DE LEGIBILIDAD TEXTO --- */
+.info-hover {
+    padding: 25px; /* Más relleno para que el texto no toque bordes */
+    background: rgba(5, 5, 5, 0.95); /* Fondo casi negro total para contraste máximo */
+}
+
+/* Contenedor seguro para el texto */
+.texto-scroll {
+    max-height: 150px; /* Altura máxima del texto */
+    overflow-y: auto; /* Si escribes una biblia, se podrá hacer scroll dentro de la tarjeta */
+    margin-bottom: 20px;
+    
+    /* Ocultamos scrollbar del texto también para que quede limpio */
+    scrollbar-width: none; 
+}
+.texto-scroll::-webkit-scrollbar { display: none; }
+
+.info-hover p {
+    color: #e0e0e0; /* Blanco un poco grisáceo para no cansar la vista */
+    font-size: 0.95rem; /* Tamaño legible */
+    line-height: 1.6; /* Separación entre líneas para leer bien */
+    margin: 0;
+}
