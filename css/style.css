@@ -822,3 +822,94 @@ form input:focus, form textarea:focus {
         grid-template-columns: 1fr 1fr; /* 2 columnas en móvil */
     }
 }
+
+/* --- NUEVAS CABECERAS VIVAS --- */
+.cabecera-viva {
+    display: flex;
+    justify-content: space-between; /* Texto a la izq, Animación a la der */
+    align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.texto-titulo h2 {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 5px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(194, 28, 36, 0.3);
+}
+
+.subtitulo-tech {
+    color: #c21c24;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+/* --- ANIMACIÓN 1: ECUALIZADOR (Modulación) --- */
+.animacion-contenedor {
+    display: flex;
+    gap: 6px;
+    height: 40px;
+    align-items: flex-end; /* Que crezcan desde abajo */
+}
+
+.barra-eq {
+    width: 8px;
+    background: #c21c24;
+    border-radius: 4px;
+    animation: ecu-baila 1s ease-in-out infinite;
+    box-shadow: 0 0 10px #c21c24;
+}
+
+/* Hacemos que cada barra se mueva a distinto ritmo */
+.barra-eq:nth-child(1) { height: 20px; animation-duration: 0.8s; }
+.barra-eq:nth-child(2) { height: 35px; animation-duration: 1.1s; }
+.barra-eq:nth-child(3) { height: 15px; animation-duration: 0.9s; }
+.barra-eq:nth-child(4) { height: 30px; animation-duration: 1.2s; }
+.barra-eq:nth-child(5) { height: 25px; animation-duration: 0.7s; }
+
+@keyframes ecu-baila {
+    0%, 100% { height: 10px; opacity: 0.5; }
+    50% { height: 40px; opacity: 1; }
+}
+
+/* --- ANIMACIÓN 2: RADAR (Estación) --- */
+.radar-box {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.radar-core {
+    width: 10px;
+    height: 10px;
+    background: #c21c24;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 2;
+    box-shadow: 0 0 10px #c21c24;
+}
+
+.radar-pulse {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #c21c24;
+    border-radius: 50%;
+    opacity: 0;
+    animation: pulso-radar 2s infinite linear;
+}
+
+.delay-1 {
+    animation-delay: 1s; /* El segundo círculo sale más tarde */
+}
+
+@keyframes pulso-radar {
+    0% { transform: scale(0.1); opacity: 1; border-width: 3px; }
+    100% { transform: scale(1.5); opacity: 0; border-width: 0px; }
+}
