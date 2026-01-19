@@ -1146,3 +1146,65 @@ form input:focus, form textarea:focus {
     /* Aseguramos que las palabras largas bajen de línea y no se corten */
     word-wrap: break-word; 
 }
+
+/* --- NUEVA SECCIÓN: MÁS INFORMACIÓN (CONTACTO) --- */
+
+.contact-slide {
+    margin-top: 20px; /* Separación de los iconos técnicos */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    
+    /* ANIMACIÓN DE ENTRADA (El efecto slide) */
+    opacity: 0;
+    transform: translateY(20px); /* Empieza desplazado abajo */
+    transition: all 0.5s ease 0.2s; /* El 0.2s es un retraso para que salga DESPUÉS del texto */
+}
+
+/* Cuando pasas el ratón por la tarjeta, esto aparece */
+.miembro-card:hover .contact-slide {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.label-contacto {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: #777;
+    letter-spacing: 2px;
+}
+
+.botones-row {
+    display: flex;
+    gap: 15px;
+}
+
+/* Estilo de los botones redondos */
+.btn-contact {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1); /* Fondo sutil */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Efecto rebote suave */
+}
+
+/* Efecto Hover individual en cada botón */
+.btn-contact:hover {
+    background: #c21c24; /* Rojo UC3M */
+    border-color: #c21c24;
+    transform: scale(1.2) rotate(5deg); /* Crece y gira un pelín */
+    box-shadow: 0 0 15px rgba(194, 28, 36, 0.6); /* Brillo neón */
+}
+
+/* Diferenciación sutil (opcional) */
+.linkedin:hover { background: #0077b5; border-color: #0077b5; box-shadow: 0 0 15px rgba(0, 119, 181, 0.6); }
+.email:hover { background: #ea4335; border-color: #ea4335; box-shadow: 0 0 15px rgba(234, 67, 53, 0.6); }
