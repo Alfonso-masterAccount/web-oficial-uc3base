@@ -1207,4 +1207,62 @@ form input:focus, form textarea:focus {
 
 /* Diferenciación sutil (opcional) */
 .linkedin:hover { background: #0077b5; border-color: #0077b5; box-shadow: 0 0 15px rgba(0, 119, 181, 0.6); }
-.email:hover { background: #ea4335; border-color: #ea4335; box-shadow: 0 0 15px rgba(234, 67, 53, 0.6); }
+/* --- BOTÓN CORREO EXPANDIBLE (Efecto Píldora) --- */
+
+.email-pill {
+    /* Estado Inicial (Círculo) */
+    width: auto;
+    max-width: 40px; /* Tamaño del círculo */
+    height: 40px;
+    border-radius: 40px; /* Muy redondeado */
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    overflow: hidden; /* Lo que se salga del círculo, no se ve */
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1); /* Animación muy suave */
+    color: white;
+}
+
+/* El Icono siempre visible */
+.icono-zona {
+    min-width: 40px; /* Ocupa todo el espacio inicial */
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+}
+
+/* El Texto (Inicialmente oculto) */
+.email-texto {
+    white-space: nowrap; /* Que no salte de línea */
+    padding-right: 15px; /* Espacio al final */
+    opacity: 0; /* Invisible */
+    font-size: 0.85rem;
+    color: #eee;
+    transform: translateX(-10px); /* Empieza un poco a la izquierda */
+    transition: all 0.3s ease;
+    font-family: 'Montserrat', sans-serif; /* O tu fuente normal */
+}
+
+/* --- ESTADO ACTIVO (Cuando haces clic) --- */
+.email-pill.activo {
+    max-width: 300px; /* Se estira hasta que quepa el texto */
+    background: #c21c24; /* Se pone rojo UC3M */
+    border-color: #c21c24;
+    box-shadow: 0 0 15px rgba(194, 28, 36, 0.4);
+}
+
+.email-pill.activo .email-texto {
+    opacity: 1; /* Aparece el texto */
+    transform: translateX(0); /* Se mueve a su sitio */
+    transition-delay: 0.1s; /* Espera un pelín a que se abra el botón */
+}
+
+/* Efecto Hover simple (antes de hacer clic) */
+.email-pill:hover {
+    border-color: #fff;
+    background: rgba(255, 255, 255, 0.2);
+}
