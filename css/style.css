@@ -679,3 +679,146 @@ form input:focus, form textarea:focus {
     margin: 0;         /* Quitar márgenes extra del párrafo */
     text-align: center;
 }
+
+/* --- ESTILOS PÁGINA EQUIPO (Misión Control) --- */
+
+.header-equipo {
+    text-align: center;
+    padding: 100px 20px 40px 20px; /* Ajuste por la barra de navegación */
+}
+
+.header-equipo h1 {
+    font-size: 3rem;
+    color: #c21c24;
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 10px;
+}
+
+.contenedor-paneles {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px; /* Espacio grande entre los dos equipos */
+}
+
+/* --- EL PANEL (La caja grande de cada equipo) --- */
+.panel-mando {
+    background: rgba(20, 20, 20, 0.8); /* Muy oscuro */
+    border: 1px solid #333;
+    border-radius: 15px; /* Bordes redondeados modernos */
+    padding: 30px;
+    position: relative;
+    overflow: hidden; /* Para contener efectos de brillo */
+    transition: border-color 0.3s ease;
+}
+
+/* Efecto sutil: Si pasas el ratón por el panel, el borde se ilumina un poco */
+.panel-mando:hover {
+    border-color: #555;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+/* --- CABECERA DEL PANEL (Icono + Título + Descripción) --- */
+.cabecera-panel {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #333; /* Línea separadora */
+    padding-bottom: 20px;
+}
+
+.icono-panel {
+    font-size: 2.5rem;
+    color: #c21c24;
+    background: rgba(194, 28, 36, 0.1);
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    border: 1px solid rgba(194, 28, 36, 0.3);
+}
+
+.texto-cabecera h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: white;
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.desc-panel {
+    color: #aaa;
+    font-size: 0.95rem;
+    max-width: 600px;
+}
+
+/* --- GRID DE MIEMBROS (Las fichas) --- */
+.grid-miembros {
+    display: grid;
+    /* Esto hace que las columnas se ajusten solas según el tamaño de pantalla */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 30px;
+}
+
+.tarjeta-miembro {
+    text-align: center;
+    padding: 20px;
+    background: #0a0a0a; /* Un poco más oscuro que el panel */
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.tarjeta-miembro:hover {
+    transform: translateY(-5px); /* Pequeño salto al pasar el ratón */
+    background: #111;
+}
+
+.foto-miembro {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* Foto redonda */
+    overflow: hidden;
+    margin: 0 auto 15px auto;
+    border: 2px solid #333;
+    transition: border-color 0.3s;
+}
+
+.tarjeta-miembro:hover .foto-miembro {
+    border-color: #c21c24; /* La foto se pone roja al pasar el ratón */
+}
+
+.foto-miembro img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la foto no se deforme */
+}
+
+.tarjeta-miembro h3 {
+    color: white;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.rol {
+    color: #c21c24; /* El rol en rojo */
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- RESPONSIVE (MÓVIL) --- */
+@media (max-width: 768px) {
+    .cabecera-panel {
+        flex-direction: column; /* Icono arriba, texto abajo */
+        text-align: center;
+    }
+    
+    .grid-miembros {
+        grid-template-columns: 1fr 1fr; /* 2 columnas en móvil */
+    }
+}
