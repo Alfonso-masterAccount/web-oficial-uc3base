@@ -1492,3 +1492,68 @@ form input:focus, form textarea:focus {
         padding: 25px;
     }
 }
+
+/* --- AJUSTES MÓVILES PARA EQUIPO (MODO COMPACTO) --- */
+@media (max-width: 768px) {
+
+    /* 1. Reducir márgenes del contenedor principal */
+    .contenedor-paneles {
+        padding: 10px;       /* Menos borde lateral */
+        gap: 40px;           /* Menos espacio entre el bloque Modulación y Estación */
+    }
+
+    /* 2. Adelgazar el Panel de Mando (La caja gris oscura) */
+    .panel-mando {
+        padding: 15px;       /* Antes 30px -> Ahora más fino */
+        border-radius: 10px;
+    }
+
+    /* 3. Cabeceras más pequeñas y apiladas */
+    .cabecera-viva {
+        flex-direction: column; /* Título arriba, Animación abajo */
+        gap: 15px;
+        text-align: center;
+        padding-bottom: 15px;
+        margin-bottom: 20px;
+    }
+
+    .texto-titulo h2 {
+        font-size: 1.8rem;   /* Letra más pequeña para que no ocupe 3 líneas */
+    }
+
+    .subtitulo-tech {
+        font-size: 0.7rem;
+    }
+
+    /* 4. TARJETAS DE MIEMBROS: Versión Mini */
+    .miembro-card {
+        height: 280px;       /* BAJAMOS DE 350px A 280px (Mucho más manejable) */
+        min-width: 230px;    /* Un poco más estrechas */
+    }
+
+    /* Ajustar tamaño de letra dentro de la tarjeta */
+    .miembro-card h3 {
+        font-size: 1.1rem;
+    }
+    
+    .rol-tag {
+        font-size: 0.7rem;
+    }
+
+    /* 5. Flechas de navegación más discretas */
+    .flecha-btn {
+        width: 35px;         /* Más pequeñas */
+        height: 35px;
+        font-size: 0.9rem;
+        background: rgba(194, 28, 36, 0.8); /* Un poco más transparentes */
+    }
+    
+    /* Pegarlas un poco más al borde para ganar espacio */
+    .pre-btn { left: -10px; }
+    .nxt-btn { right: -10px; }
+    
+    /* 6. Ajustar el texto hover para la nueva altura */
+    .texto-scroll {
+        max-height: 120px; /* Menos espacio de scroll */
+    }
+}
