@@ -710,7 +710,6 @@ form input:focus, form textarea:focus {
     border-radius: 15px; /* Bordes redondeados modernos */
     padding: 30px;
     position: relative;
-    overflow: hidden; /* Para contener efectos de brillo */
     transition: border-color 0.3s ease;
 }
 
@@ -994,13 +993,12 @@ form input:focus, form textarea:focus {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(10, 10, 10, 0.9); /* Fondo oscuro casi opaco */
-    padding: 30px;
+    background: rgba(5, 5, 5, 0.95); /* Fondo casi negro total */
+    
+    /* USAMOS FLEXBOX PARA ORGANIZAR EL INTERIOR */
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    flex-direction: column; /* Elementos uno debajo de otro */
+    padding: 25px; /* Margen interno cómodo */
     
     /* TRUCO: Inicialmente invisible y desplazado */
     opacity: 0;
@@ -1010,11 +1008,10 @@ form input:focus, form textarea:focus {
 }
 
 .info-hover p {
-    color: #ddd;
+    color: #e0e0e0;
     font-size: 0.95rem;
-    line-height: 1.5;
-    font-style: italic;
-    margin-bottom: 20px;
+    line-height: 1.6; /* Buen espaciado para leer */
+    margin: 0; /* Quitamos márgenes extra al párrafo */
 }
 
 .tech-stack {
@@ -1105,11 +1102,15 @@ form input:focus, form textarea:focus {
 
 /* Contenedor seguro para el texto */
 .texto-scroll {
-    max-height: 150px; /* Altura máxima del texto */
-    overflow-y: auto; /* Si escribes una biblia, se podrá hacer scroll dentro de la tarjeta */
-    margin-bottom: 20px;
+    /* FLEX-GROW: 1 le dice: "Ocupa todo el espacio vertical disponible" */
+    flex-grow: 1; 
     
-    /* Ocultamos scrollbar del texto también para que quede limpio */
+    /* Si el texto es más alto que el espacio disponible, permite scroll */
+    overflow-y: auto; 
+    
+    margin-bottom: 15px; /* Espacio antes de los iconos de abajo */
+    
+    /* Ocultamos scrollbar fea */
     scrollbar-width: none; 
 }
 .texto-scroll::-webkit-scrollbar { display: none; }
